@@ -3,3 +3,6 @@ def count_ocurrences(path, word):
     read_data = file.read()
     word_count = read_data.lower().count(word.lower())
     return word_count
+
+
+# print(count_ocurrences("src/jobs.csv", "the"))
