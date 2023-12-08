@@ -1,11 +1,22 @@
+import os
 from src.jobs import read
 
 
 def get_unique_job_types(path):
+    """
+        Gets the unique job types from the CSV file
+
+        :param path: path to the CSV file
+
+        :return: set of job types
+    """
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"File not found: {path}")
+
     all_jobs = read(path)
-    job_types = set()
-    for job in all_jobs:
-        job_types.add(job["job_type"])
+
+    # Using a set expression to directly obtain unique types
+    job_types = {job["job_type"] for job in all_jobs}
     return job_types
 
 
