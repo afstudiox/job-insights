@@ -12,19 +12,22 @@ def get_unique_job_types(path):
     """
     if not os.path.exists(path):
         raise FileNotFoundError(f"File not found: {path}")
-
     all_jobs = read(path)
-
     # Using a set expression to directly obtain unique types
     job_types = {job["job_type"] for job in all_jobs}
     return job_types
 
 
 def filter_by_job_type(jobs, job_type):
-    filtered_jobs = []
-    for job in jobs:
-        if job["job_type"] == job_type:
-            filtered_jobs.append(job)
+    """
+        Filters a job list by job type
+
+        :param jobs: list of jobs
+        :param job_type: job type to filter by
+
+        :return: list of jobs filtered by job type
+    """
+    filtered_jobs = [job for job in jobs if job["job_type"] == job_type]
     return filtered_jobs
 
 
