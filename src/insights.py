@@ -32,11 +32,18 @@ def filter_by_job_type(jobs, job_type):
 
 
 def get_unique_industries(path):
+    """
+        Gets the unique industries from the CSV file
+
+        :param path: path to the CSV file
+
+        :return: A set containing the unique industries.
+    """
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"File not found: {path}")
     all_jobs = read(path)
-    industries = set()
-    for job in all_jobs:
-        if job["industry"] != "":
-            industries.add(job["industry"])
+    # Using a set expression to directly obtain unique industries
+    industries = {job["industry"] for job in all_jobs}
     return industries
 
 
