@@ -61,16 +61,20 @@ def filter_by_industry(jobs, industry):
 
 
 def get_max_salary(path):
+    """
+        Gets the maximum salary from the CSV file
+
+        :param path: path to the CSV file
+
+        :return: The maximum salary
+    """
     all_jobs = read(path)
-    salarys = set()
-    for job in all_jobs:
-        if job["max_salary"] != "":
-            try:
-                salarys.add(int(job["max_salary"]))
-            except ValueError:
-                pass
-    result = max(salarys)
-    return result
+    salaries = {
+        int(job["max_salary"])  # Convert the salary to an integer
+        for job in all_jobs
+        if job["max_salary"].isdigit()  # Check if the salary is a digit
+        }
+    return max(salaries, default=None) if salaries else None
 
 
 def get_min_salary(path):
