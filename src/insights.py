@@ -74,20 +74,26 @@ def get_max_salary(path):
         for job in all_jobs
         if job["max_salary"].isdigit()  # Check if the salary is a digit
         }
+    # Return the maximum salary if the salaries set is not empty
     return max(salaries, default=None) if salaries else None
 
 
 def get_min_salary(path):
+    """
+        Gets the minimum salary from the CSV file
+
+        :param path: path to the CSV file
+
+        :return: The minimum salary
+    """
     all_jobs = read(path)
-    salarys = set()
-    for job in all_jobs:
-        if job["min_salary"] != "":
-            try:
-                salarys.add(int(job["min_salary"]))
-            except ValueError:
-                pass
-    result = min(salarys)
-    return result
+    salaries = {
+        int(job["min_salary"])  # Convert the salary to an integer
+        for job in all_jobs
+        if job["min_salary"].isdigit()  # Check if the salary is a digit
+        }
+    # Return the minimum salary if the salaries set is not empty
+    return min(salaries, default=None) if salaries else None
 
 
 def matches_salary_range(job, salary):
