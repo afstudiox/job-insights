@@ -48,10 +48,15 @@ def get_unique_industries(path):
 
 
 def filter_by_industry(jobs, industry):
-    filtered_jobs = []
-    for job in jobs:
-        if job["industry"] == industry:
-            filtered_jobs.append(job)
+    """
+        Filters a job list by industry
+
+        :param jobs: list of jobs
+        :param industry: industry to filter by
+
+        :return: list of jobs filtered by industry
+    """
+    filtered_jobs = [job for job in jobs if job["industry"] == industry]
     return filtered_jobs
 
 
