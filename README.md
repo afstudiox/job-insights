@@ -11,74 +11,7 @@ Projeto Trybe de uma aplicação análise de dados reais sobre empregos.<br>
 
 
 ## Stacks utilizadas
-<table cellspacing="0" cellpadding="0" border="0">
-    <tr>
-        <td>
-            <table cellspacing="0" cellpadding="0" border="0">
-                <tr>
-                    <td>Python</td>
-                </tr>
-                <tr>
-                    <td>
-                        <img 
-                            style="display: block"
-                            width="30"
-                            src="https://devicons.railway.app/python?variant=color" 
-                        >
-                    </td>
-                </tr>
-            </table>
-        </td>
-        <td>
-            <table cellspacing="0" cellpadding="0" border="0">
-                <tr>
-                    <td>Pytest</td>
-                </tr>
-                <tr>
-                    <td>
-                        <img 
-                            width="30"
-                            src="https://devicons.railway.app/pytest?variant=light" 
-                        >
-                    </td>
-                </tr>
-            </table>
-        </td>
-        <td>
-            <table cellspacing="0" cellpadding="0" border="0">
-                <tr>
-                    <td>Docker</td>
-                </tr>
-                <tr>
-                    <td>
-                        <img 
-                            width="30"
-                            src="https://devicons.railway.app/docker?variant=light" 
-                        >
-                    </td>
-                </tr>
-            </table>
-        </td>
-        <td>
-            <table cellspacing="0" cellpadding="0" border="0">
-                <tr>
-                    <td>Flask</td>
-                </tr>
-                <tr>
-                    <td>
-                        <img 
-                            width="30"
-                            src="https://devicons.railway.app/flask?variant=light" 
-                        >
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
-
-
-
+![Static Badge](https://img.shields.io/badge/:badgeContent?logo=bitcoin&logoColor=%23ffffff)
 
 
 
