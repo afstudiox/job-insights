@@ -21,6 +21,7 @@ Projeto Trybe de uma aplicação análise de dados reais sobre empregos.<br>
                 <tr>
                     <td>
                         <img 
+                            style="display: block"
                             width="30"
                             src="https://devicons.railway.app/python?variant=color" 
                         >
