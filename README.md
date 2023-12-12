@@ -11,7 +11,7 @@ Projeto Trybe de uma aplicação análise de dados reais sobre empregos.<br>
 
 
 ## Stacks utilizadas
-![Python](https://img.shields.io/badge/python-text?style=for-the-badges&logo=python&labelColor=CCCCCC&color=3776AB)
+[![Python](https://img.shields.io/badge/python-text?style=for-the-badges&logo=python&labelColor=CCCCCC&color=3776AB)](https://github.com/afstudiox?tab=repositories&q=&type=&language=python&sort=)
 ![Pytest](https://img.shields.io/badge/pytest-text?style=for-the-badges&logo=pytest&labelColor=CCCCCC&color=3776AB)
 ![Docker](https://img.shields.io/badge/docker-text?style=for-the-badges&logo=docker&labelColor=CCCCCC&color=3776AB)
 ![Flask](https://img.shields.io/badge/flask-text?style=for-the-badges&logo=flask&labelColor=CCCCCC&color=3776AB)
