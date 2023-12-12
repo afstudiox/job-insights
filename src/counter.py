@@ -5,4 +5,4 @@ def count_ocurrences(path, word):
     return word_count
 
 
-# print(count_ocurrences("src/jobs.csv", "the"))
+print(count_ocurrences("src/jobs.csv", "Java"))
