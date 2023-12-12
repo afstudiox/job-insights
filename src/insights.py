@@ -97,15 +97,31 @@ def get_min_salary(path):
 
 
 def matches_salary_range(job, salary):
-    if type(salary) != int:
-        raise ValueError("1")
-    elif ("max_salary" or "min_salary") not in job:
-        raise ValueError("2")
-    elif (type(job["max_salary"]) or type(job["min_salary"])) != int:
-        raise ValueError("3")
-    elif job["min_salary"] > job["max_salary"]:
-        raise ValueError("4")
-    return job["max_salary"] >= salary >= job["min_salary"]
+    """
+        Checks if a job matches a salary range
+
+        :param job: job to check
+        :param salary: salary to check
+
+        :return: True if the job matches the salary range, False otherwise
+    """
+
+    # string errors
+    error1 = "Salary must be a integer"
+    error2 = "The min_salary and max_salary"
+    +"keys must be present."
+    error3 = "The values of min_salary and max_salary must be integers."
+    error4 = "The value of min_salary cannot be greater than max_salary."
+
+    if not job[salary].isdigit():
+        raise TypeError(error1)
+    if ("min_salary" not in job) or ("max_salary" not in job):
+        raise ValueError(error2)
+    if not (job["min_salary"].isdigit() and job["max_salary"].isdigit()):
+        raise ValueError(error3)
+    if int(job["min_salary"]) > int(job["max_salary"]):
+        raise ValueError(error4)
+
 
 
 def filter_by_salary_range(jobs, salary):
