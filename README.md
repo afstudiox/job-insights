@@ -11,10 +11,10 @@ Projeto Trybe de uma aplicação análise de dados reais sobre empregos.<br>
 
 
 ## Stacks utilizadas
-<table>
+<table cellspacing="0" cellpadding="0" border="0">
     <tr>
         <td>
-            <table>
+            <table cellspacing="0" cellpadding="0" border="0">
                 <tr>
                     <td>Python</td>
                 </tr>
@@ -29,7 +29,7 @@ Projeto Trybe de uma aplicação análise de dados reais sobre empregos.<br>
             </table>
         </td>
         <td>
-            <table>
+            <table cellspacing="0" cellpadding="0" border="0">
                 <tr>
                     <td>Pytest</td>
                 </tr>
@@ -44,7 +44,7 @@ Projeto Trybe de uma aplicação análise de dados reais sobre empregos.<br>
             </table>
         </td>
         <td>
-            <table>
+            <table cellspacing="0" cellpadding="0" border="0">
                 <tr>
                     <td>Docker</td>
                 </tr>
@@ -59,7 +59,7 @@ Projeto Trybe de uma aplicação análise de dados reais sobre empregos.<br>
             </table>
         </td>
         <td>
-            <table>
+            <table cellspacing="0" cellpadding="0" border="0">
                 <tr>
                     <td>Flask</td>
                 </tr>
