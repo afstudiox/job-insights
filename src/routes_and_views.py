@@ -15,6 +15,7 @@ from .more_insights import (
     slice_jobs,
     get_int_from_args,
     build_jobs_urls,
+    get_job,
 )
 
 bp = Blueprint("client", __name__, template_folder="templates")
@@ -36,6 +37,17 @@ def index():
 </h2>
         """
     return render_template("index.jinja2", md=md)
+
+
+@bp.route("/job/<index>")
+def view_job(index):
+    all_jobs = read(path="src/jobs.csv")
+    job = get_job(all_jobs, index)
+
+    if not job:
+        return "Job not found", 404
+
+    return render_template("job.jinja2", job=job)
 
 
 @bp.route("/jobs")

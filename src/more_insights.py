@@ -23,6 +23,6 @@ def get_int_from_args(field_name, default_value):
 def build_jobs_urls(jobs):
     for job in jobs:
         try:
-            job["url"] = url_for("client.job", index=job["id"])
+            job["url"] = url_for("client.view_job", index=job["id"])
         except BuildError:
             break
