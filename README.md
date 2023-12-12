@@ -11,24 +11,74 @@ Projeto Trybe de uma aplicação análise de dados reais sobre empregos.<br>
 
 
 ## Stacks utilizadas
-<div style="display: flex; justify-content: left; width: 100%; padding: 5px;">
-    <div style="display: flex; flex-direction: column; margin-left: 15px">
-        <span style="margin-bottom: 5px">Python</span>
-        <img src="https://devicons.railway.app/python?variant=color" width="30">
-    </div>
-    <div style="display: flex; flex-direction: column; margin-left: 15px">
-        <span style="margin-bottom: 5px">Pytest</span>
-        <img src="https://devicons.railway.app/pytest?variant=light" width="30">
-    </div>
-    <div style="display: flex; flex-direction: column; margin-left: 15px">
-        <span>Docker</span>
-        <img src="https://devicons.railway.app/docker?pytest?variant=light" width="41">
-    </div>
-    <div style="display: flex; flex-direction: column; margin-left: 15px">
-        <span style="margin-bottom: 5px">Flask</span>
-        <img src="https://devicons.railway.app/flask?variant=light" width="30">
-    </div>
-</div>
+<table>
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td>Python</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img 
+                            width="30"
+                            src="https://devicons.railway.app/python?variant=color" 
+                        >
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <td>Pytest</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img 
+                            width="30"
+                            src="https://devicons.railway.app/pytest?variant=light" 
+                        >
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <td>Docker</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img 
+                            width="30"
+                            src="https://devicons.railway.app/docker?variant=light" 
+                        >
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td>
+            <table>
+                <tr>
+                    <td>Flask</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img 
+                            width="30"
+                            src="https://devicons.railway.app/flask?variant=light" 
+                        >
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+
+
+
 
 
 ## Como testar a aplicação:
