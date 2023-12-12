@@ -72,10 +72,10 @@ def get_max_salary(path):
     salaries = {
         int(job["max_salary"])  # Convert the salary to an integer
         for job in all_jobs
-        if job["max_salary"].isdigit()  # Check if the salary is a digit
+        if job["max_salary"] and job["max_salary"].isdigit()  # Check if the salary is a digit
         }
     # Return the maximum salary if the salaries set is not empty
-    return max(salaries, default=None) if salaries else None
+    return max(salaries, default=0) if salaries else 0
 
 
 def get_min_salary(path):
@@ -90,10 +90,10 @@ def get_min_salary(path):
     salaries = {
         int(job["min_salary"])  # Convert the salary to an integer
         for job in all_jobs
-        if job["min_salary"].isdigit()  # Check if the salary is a digit
+        if job["min_salary"] and job["min_salary"].isdigit()  # Check if the salary is a digit
         }
     # Return the minimum salary if the salaries set is not empty
-    return min(salaries, default=None) if salaries else None
+    return min(salaries, default=0) if salaries else 0
 
 
 def matches_salary_range(job, salary):
@@ -105,31 +105,114 @@ def matches_salary_range(job, salary):
 
         :return: True if the job matches the salary range, False otherwise
     """
+    # Check if min_salary and max_salary are present
+    check_salary_keys(job)
 
-    # string errors
-    error1 = "Salary must be a integer"
-    error2 = "The min_salary and max_salary"
-    +"keys must be present."
-    error3 = "The values of min_salary and max_salary must be integers."
-    error4 = "The value of min_salary cannot be greater than max_salary."
+    # Check if min_salary and max_salary are integers
+    check_salary_integers(job)
 
-    if not job[salary].isdigit():
-        raise TypeError(error1)
-    if ("min_salary" not in job) or ("max_salary" not in job):
-        raise ValueError(error2)
-    if not (job["min_salary"].isdigit() and job["max_salary"].isdigit()):
-        raise ValueError(error3)
-    if int(job["min_salary"]) > int(job["max_salary"]):
-        raise ValueError(error4)
+    # Check if min_salary is less than max_salary
+    check_salary_order(job)
 
+    # Check if salary is an integer
+    check_salary_type(salary)
+
+    # Check if salary is in range
+    return check_salary_range(job, salary)
+
+
+def check_salary_keys(job):
+    """
+        Checks if min_salary and max_salary keys are present in the job dictionary
+
+        :param job: job dictionary
+
+        :raises: ValueError if min_salary or max_salary keys are missing
+    """
+    if "min_salary" not in job or "max_salary" not in job:
+        raise ValueError("The min_salary and max_salary keys must be present.")
+
+
+def check_salary_integers(job):
+    """
+        Checks if min_salary and max_salary values are integers in the job dictionary
+
+        :param job: job dictionary
+
+        :raises: ValueError if min_salary or max_salary values are not integers
+    """
+    min_salary = job.get("min_salary", "")
+    max_salary = job.get("max_salary", "")
+
+    if min_salary and not min_salary.isdigit():
+        raise ValueError("The value of min_salary must be an integer.")
+  
+    if max_salary and not max_salary.isdigit():
+        raise ValueError("The value of max_salary must be an integer.")
+
+
+def check_salary_order(job):
+    """
+        Checks if min_salary is less than max_salary in the job dictionary
+
+        :param job: job dictionary
+
+        :raises: ValueError if min_salary is greater than max_salary
+    """
+    min_salary = job.get("min_salary", "")
+    max_salary = job.get("max_salary", "")
+
+    if min_salary and max_salary:
+        if min_salary.isdigit() and max_salary.isdigit():
+            if int(min_salary) > int(max_salary):
+                raise ValueError("The value of min_salary cannot be greater than max_salary.")
+
+
+def check_salary_type(salary):
+    """
+        Checks if salary is an integer
+
+        :param salary: salary value
+
+        :raises: ValueError if salary is not an integer
+    """
+    if not isinstance(salary, int):
+        raise ValueError("Salary must be an integer.")
+
+
+def check_salary_range(job, salary):
+    """
+        Checks if salary is within the range of min_salary and max_salary in the job dictionary
+
+        :param job: job dictionary
+        :param salary: salary value
+
+        :return: True if salary is within the range, False otherwise
+    """
+    min_salary = job.get("min_salary", "")
+    max_salary = job.get("max_salary", "")
+
+    if min_salary and max_salary:
+        return int(min_salary) <= int(salary) <= int(max_salary)
+    
+    return True
 
 
 def filter_by_salary_range(jobs, salary):
-    filter_by_salary_range_values = []
-    for job in jobs:
-        try:
-            if matches_salary_range(job, salary):
-                filter_by_salary_range_values.append(job)
-        except ValueError:
-            pass
-    return filter_by_salary_range_values
+    """
+        Filters a job list by salary range
+
+        :param jobs: list of jobs
+        :param salary: salary to filter by
+
+        :return: list of jobs filtered by salary range
+    """
+    filtered_jobs = [
+        job
+        for job in jobs
+        if
+        job.get("min_salary") and
+        job.get("max_salary") and
+        matches_salary_range(job, salary)
+    ]
+    return filtered_jobs
